@@ -23,6 +23,7 @@ public class HighScore : MonoBehaviour
     {
         Text gt = this.GetComponent<Text>();
         gt.text = "High Score: " + score;
+       
         //Update the PlayerPrefs HighScore if necessary
         if(score > PlayerPrefs.GetInt("HighScore"))
         {

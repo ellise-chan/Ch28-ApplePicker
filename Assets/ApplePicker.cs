@@ -15,9 +15,9 @@ public class ApplePicker : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        for(int i=0; i<numBaskets; i++)
+        basketList = new List<GameObject>();
+        for (int i=0; i<numBaskets; i++)
         {
-            basketList = new List<GameObject>();
             GameObject tBasketGO = Instantiate<GameObject>(basketPrefab);
             Vector3 pos = Vector3.zero;
             pos.y = basketBottomY + (basketSpacingY * i);
@@ -38,8 +38,10 @@ public class ApplePicker : MonoBehaviour
         //Destroy one of the baskets
         //Get the index of the last Basket in basketList
         int basketIndex = basketList.Count-1;
+        
         //Get reference to that Basket GameObject
         GameObject tBasketGO = basketList[basketIndex];
+       
         //Remove the Basket from the list and destroy the GameObject
         basketList.RemoveAt(basketIndex);
         Destroy(tBasketGO);
